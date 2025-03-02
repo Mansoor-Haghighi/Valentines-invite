@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: red;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #yes {
+            background-color: lightgreen;
+        }
+        #no {
+            background-color: lightcoral;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <div class="button-container">
+        <button id="yes" onclick="sayYes()">Yes</button>
+        <button id="no" onmouseover="moveNoButton()">No</button>
+    </div>
+    
+    <script>
+        function sayYes() {
+            alert("Sick! I'll see you tomorrow at 8:30");
+        }
+        
+        function moveNoButton() {
+            const noButton = document.getElementById("no");
+            const range = 100; // Adjust this value for how far the "No" button can move
+            const x = Math.random() * range - range / 2;
+            const y = Math.random() * range - range / 2;
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
+        }
+    </script>
+</body>
+</html>
